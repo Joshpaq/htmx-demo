@@ -1,0 +1,30 @@
+{
+  "name": "htmx-demo",
+  "version": "1.0.0",
+  "scripts": {
+    "build:code": "esbuild ./src/app.ts --bundle --outfile=./dist/app.js --platform=node",
+    "build:code:watch": "esbuild ./src/app.ts --bundle --outfile=./dist/app.js --platform=node --watch",
+    "build:css": "tailwindcss -o ./dist/styles.css --minify",
+    "build:css:watch": "tailwindcss -o ./dist/styles.css --minify --watch",
+    "dev": "concurrently \"node --watch ./dist/app.js\" \"npm run build:code:watch\" \"npm run build:css:watch\""
+  },
+  "dependencies": {
+    "@faker-js/faker": "^8.0.2",
+    "@libsql/client": "^0.3.2",
+    "body-parser": "^1.20.2",
+    "clsx": "^2.0.0",
+    "drizzle-orm": "^0.28.5",
+    "express": "^4.18.2",
+    "preact": "^10.17.1",
+    "preact-render-to-string": "^6.2.1",
+    "tailwind-merge": "^1.14.0",
+    "zod": "^3.22.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.5.9",
+    "concurrently": "^8.2.1",
+    "esbuild": "^0.19.2",
+    "tailwindcss": "^3.3.3",
+    "typescript": "^5.2.2"
+  }
+}
